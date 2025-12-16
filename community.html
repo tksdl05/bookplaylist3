@@ -4,6 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>책플리 | Community</title>
+  <style>
+  /* 게시글 리스트 */
+  .post-row{
+    color: rgba(243,239,230,.88);
+    transition: .15s;
+  }
+  .post-row:hover{
+    color: var(--accent);
+    background: rgba(0,0,0,.10);
+  }
+  .post-title{
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
+  .post-meta{
+    color: rgba(198,161,90,.75);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .post-line{
+    height: 1px;
+    background: rgba(198,161,90,.18);
+  }
+</style>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -73,7 +99,7 @@
 <header class="page-hero">
   <div class="container">
     <h1 class="page-title">Community</h1>
-    <p class="page-desc">나만의 테마/플레이리스트 조합과 독서 아이템을 공유하는 공간(섹션 이동 가능)</p>
+    <p class="page-desc">나만의 테마/플레이리스트 조합과 독서 아이템을 공유하는 공간</p>
   </div>
 </header>
 
@@ -82,7 +108,6 @@
 
     <section id="my-playlist" class="mb-5">
       <h2 class="page-title" style="font-size:1.6rem;">나의 책플리</h2>
-      <p class="page-desc">작성 폼(뼈대)</p>
 
       <div class="glass-card p-4">
         <form>
@@ -94,6 +119,7 @@
                 <option>바다</option>
                 <option>도시</option>
                 <option>판타지</option>
+                <option>새로운 테마</option>
               </select>
             </div>
             <div class="col-md-8">
@@ -109,41 +135,55 @@
           </div>
 
           <div class="mt-3">
-            <button type="button" class="btn btn-login">등록(임시)</button>
+            <button type="button" class="btn btn-login">등록</button>
           </div>
         </form>
       </div>
     </section>
 
-    <section id="items">
-      <h2 class="page-title" style="font-size:1.6rem;">독서 아이템 공유</h2>
-      <p class="page-desc">게시글 리스트(뼈대)</p>
+        <!--공유된 게시글 예시 -->
+    <section id="shared-posts" class="mb-5">
+      <h2 class="page-title" style="font-size:1.6rem;">공유된 책플리</h2>
+      <p style="color:var(--muted); margin-bottom:14px;">
+        우리의 즐겁게 책 읽는 방법
+      </p>
 
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="glass-card p-4 h-100">
-            <h5 style="color:var(--gold); font-weight:800;">아이템 1</h5>
-            <p class="mb-0" style="color:var(--muted); line-height:1.7;">예: 스탠드 조명 / 머그컵</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="glass-card p-4 h-100">
-            <h5 style="color:var(--gold); font-weight:800;">아이템 2</h5>
-            <p class="mb-0" style="color:var(--muted); line-height:1.7;">예: 책갈피 / 노트</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="glass-card p-4 h-100">
-            <h5 style="color:var(--gold); font-weight:800;">아이템 3</h5>
-            <p class="mb-0" style="color:var(--muted); line-height:1.7;">예: 향/디퓨저</p>
-          </div>
-        </div>
+      <div class="glass-card p-3">
+
+        <!-- 게시글 1 -->
+        <a href="#" class="post-row d-flex justify-content-between align-items-center text-decoration-none py-3 px-2">
+          <span class="post-title">[바다] 새벽 해변가 흔들그네에 앉아 읽는 듯한 소설</span>
+          <span class="post-meta">12/16</span>
+        </a>
+        <div class="post-line"></div>
+
+        <!-- 게시글 2 -->
+        <a href="#" class="post-row d-flex justify-content-between align-items-center text-decoration-none py-3 px-2">
+          <span class="post-title">[숲] 비 오는 오두막에서 읽는 에세이 무드</span>
+          <span class="post-meta">12/15</span>
+        </a>
+        <div class="post-line"></div>
+
+        <!-- 게시글 3 -->
+        <a href="#" class="post-row d-flex justify-content-between align-items-center text-decoration-none py-3 px-2">
+          <span class="post-title">[도시] 눈 내리는 연말, 카페에서 책 읽을 때</span>
+          <span class="post-meta">12/13</span>
+        </a>
+        <div class="post-line"></div>
+
+        <!-- 게시글 4 -->
+        <a href="#" class="post-row d-flex justify-content-between align-items-center text-decoration-none py-3 px-2">
+          <span class="post-title">[판타지] 마법 도서관에서 몰입하는 OST 리스트</span>
+          <span class="post-meta">12/10</span>
+        </a>
+
       </div>
+    </section>
+
 
       <div class="mt-4">
         <a class="btn btn-login" href="#my-playlist">↑ 나의 책플리로</a>
       </div>
-    </section>
 
   </div>
 </main>
