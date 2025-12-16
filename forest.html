@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>책플리|숲 속</title>
+     <style>
+    /* 배경 사진 */
+    .theme-bg{
+      min-height: calc(100vh - 86px);
+      padding: 28px 0;
+      background:
+        linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)),
+        url("images/foresthut.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 2) 상단 제목(흰 박스) */
+    .page-tag{
+      width: fit-content;
+      background: rgba(18, 44, 40, .45);
+      padding: 10px 14px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.2);
+      margin-bottom: 18px;
+    }
+    .page-tag h1{
+      margin: 0;
+      color: var(--gold);
+      font-weight: 900;
+      line-height: 1.05;
+      font-size: clamp(26px, 3vw, 42px);
+    }
+
+    /* 3) 반투명 블럭(Tracklist/설명) */
+    .glass-block{
+      background: rgba(18, 44, 40, .45);
+      border: 1px solid rgba(198,161,90,.22);
+      padding: 18px 18px 16px;
+      min-height: 280px;
+    }
+    .block-title{
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 34px;
+      margin: 0 0 14px;
+    }
+    .block-text{
+      color: rgba(198,161,90,.88);
+      line-height: 1.75;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* 4) Tracklist: 링크 + hover 팝업(뉴스 카드처럼) */
+    .track-item{
+      position: relative;
+      width: fit-content;
+      margin: 22px 0;
+    }
+    .track-link{
+      color: rgba(198,161,90,.9);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: .4px;
+    }
+    .track-link:hover{ color: var(--accent); }
+
+    /* 팝업 카드 */
+    .track-popup{
+      position: absolute;
+      left: 0;
+      top: 44px;
+      width: min(380px, 78vw);
+      padding: 12px 12px;
+      background: rgba(36,75,58,.55);
+      border: 1px solid rgba(198,161,90,.22);
+      box-shadow: 0 14px 32px rgba(0,0,0,.2);
+      z-index: 10;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: .15s;
+    }
+    /* hover하면 팝업 보이기 */
+    .track-item:hover .track-popup{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .popup-title{
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .popup-desc{
+      color: rgba(243,239,230,.85);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .popup-url{
+      color: rgba(95,255,160,.85); /* 링크 강조 */
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    /* 안내 문구 */
+    .hint{
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 900;
+      line-height: 1.55;
+    }
+  </style>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark topbar fixed-top">
+  <div class="container-fluid px-4">
+
+    <!-- 책플리 이동 -->
+    <a class="navbar-brand brandbox" href="index.html">책플리</a>
+
+    <!--메뉴 -->
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-lg-4 align-items-lg-start">
+
+        <!-- About -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown">
+            About
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="index.html#about">북플리는?</a></li>
+          </ul>
+        </li>
+
+        <!-- BookPlaylist -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="bookplaylist.html" >
+            BookPlaylist
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="forest.html">숲</a></li>
+            <li><a class="dropdown-item" href="sea.html">바다</a></li>
+            <li><a class="dropdown-item" href="urban.html">도시</a></li>
+            <li><a class="dropdown-item" href="fantasy.html">판타지</a></li>
+          </ul>
+        </li>
+
+        <!-- Reading Tip -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="tips.html">
+            Reading Tip
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="tips.html#choose-book">책 고르기</a></li>
+            <li><a class="dropdown-item" href="tips.html#hobby-tip">취미 독서를 위한 꿀팁</a></li>
+          </ul>
+        </li>
+
+        <!-- Community -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="community.html">
+            Community
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="community.html#my-playlist">나의 책플리</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- 오른쪽 끝: 로그인 -->
+    <a class="btn btn-login ms-3" href="#">로그인</a>
+
+  </div>
+  </nav>
+   <!-- ===== 배경 + 콘텐츠 ===== -->
+  <main class="theme-bg">
+    <div class="container">
+
+      <!-- 페이지 제목(흰 박스) -->
+      <div class="page-tag">
+        <h1>바다 테마 플레이리스트</h1>
+      </div>
+
+      <div class="row g-4">
+        <!-- Tracklist 블럭 -->
+        <div class="col-lg-6">
+          <section class="glass-block">
+            <h2 class="block-title">Tracklist</h2>
+
+            <!-- 트랙 1 -->
+            <div class="track-item">
+              <a class="track-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+                노래1 - 가수
+              </a>
+
+              <!-- hover 팝업(뉴스 카드처럼) -->
+              <div class="track-popup">
+                <div class="popup-title">곡소개 / 장르</div>
+                <div class="popup-desc">
+                  잔잔한 앰비언트(예시). 파도 소리처럼 배경으로 흐르며 몰입을 방해하지 않음.
+                </div>
+                <div class="popup-url">https://www.youtube.com/</div>
+              </div>
+            </div>
+
+            <!-- 트랙 2 -->
+            <div class="track-item">
+              <a class="track-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+                노래2 - 가수
+              </a>
+              <div class="track-popup">
+                <div class="popup-title">곡소개 / 장르</div>
+                <div class="popup-desc">
+                  로파이/피아노(예시). 페이지 넘김 템포와 잘 맞는 느린 리듬.
+                </div>
+                <div class="popup-url">https://www.youtube.com/</div>
+              </div>
+            </div>
+
+            <!-- 트랙 3 -->
+            <div class="track-item">
+              <a class="track-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+                노래3 - 가수
+              </a>
+              <div class="track-popup">
+                <div class="popup-title">곡소개 / 장르</div>
+                <div class="popup-desc">
+                  몽환/신스(예시). 감정선은 올리되 집중을 끊지 않는 타입.
+                </div>
+                <div class="popup-url">https://www.youtube.com/</div>
+              </div>
+            </div>
+
+            <p class="hint mb-0">
+              노래 제목에 마우스를 올리면<br>
+              곡 소개와 링크가 표시됩니다.
+            </p>
+          </section>
+        </div>
+
+        <!-- 설명 블럭 -->
+        <div class="col-lg-5 offset-lg-1">
+          <section class="glass-block">
+            <h2 class="block-title">바다에서의 독서</h2>
+            <p class="block-text">
+              독서와 파도소리가 서로의 빈틈을 천천히 채워주는 시간.
+              잔잔한 리듬의 음악과 함께 조용히 흘러가게 두세요.
+            </p>
+          </section>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

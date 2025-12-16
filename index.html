@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>책플리 | 메인</title>
+
+  <style>
+/*메인*/
+.hero-section{
+  min-height: calc(100vh - 86px); 
+  padding: 20px 0;
+}
+
+/* 책 */
+.book-card{
+  width: min(640px, 100%);
+  aspect-ratio: 4 / 5;
+  background: rgba(36,75,58,.95);
+  border: 6px solid rgba(0,0,0,.18);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 22px 50px rgba(0,0,0,.28);
+  transition: transform .15s;
+}
+.book-card:hover{
+  transform: translateY(-4px);
+}
+
+.book-top{
+  height: 40px;
+  background: rgba(255,255,255,.95);
+}
+
+.book-face{
+  padding: 80px 22px 36px;
+  text-align: center;
+}
+
+.book-title{
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 68px;
+  margin-bottom: 18px;
+}
+
+.book-sub{
+  color: rgba(198,161,90,.85);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/*책 아래 버튼*/
+.btn-stack{
+  margin-top: 48px;
+}
+
+.tip-btn{
+  background: rgba(198,161,90,.88);
+  border: 1px solid rgba(0,0,0,.1);
+  color: rgba(36,75,58,.95);
+  font-weight: 900;
+  padding: 16px 12px;
+}
+.tip-btn:hover{
+  color: var(--accent);
+}
+
+/* 소개 섹션 */
+#about{
+  padding-top: 80px;
+}
+
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark topbar fixed-top">
+  <div class="container-fluid px-4">
+
+    <!-- 책플리 이동 -->
+    <a class="navbar-brand brandbox" href="index.html">책플리</a>
+
+    <!--메뉴 -->
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-lg-4 align-items-lg-start">
+
+        <!-- About -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown">
+            About
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="index.html#about">북플리는?</a></li>
+          </ul>
+        </li>
+
+        <!-- BookPlaylist -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="bookplaylist.html" >
+            BookPlaylist
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="forest.html">숲</a></li>
+            <li><a class="dropdown-item" href="sea.html">바다</a></li>
+            <li><a class="dropdown-item" href="urban.html">도시</a></li>
+            <li><a class="dropdown-item" href="fantasy.html">판타지</a></li>
+          </ul>
+        </li>
+
+        <!-- Reading Tip -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="tips.html">
+            Reading Tip
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="tips.html#choose-book">책 고르기</a></li>
+            <li><a class="dropdown-item" href="tips.html#hobby-tip">취미 독서를 위한 꿀팁</a></li>
+          </ul>
+        </li>
+
+        <!-- Community -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="community.html">
+            Community
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="community.html#my-playlist">나의 책플리</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- 오른쪽 끝: 로그인 -->
+    <a class="btn btn-login ms-3" href="#">로그인</a>
+
+  </div>
+  </nav>
+
+
+  <!-- ===== MAIN ===== -->
+  <header class="hero-section">
+    <div class="container">
+   <div class="row min-vh-100 justify-content-center align-items-center">
+    <div class="col-lg-6 text-center d-flex flex-column align-items-center">
+
+  <!-- 책 -->
+  <a class="book-wrap d-inline-block" href="bookplaylist.html">
+    <div class="book-deco">
+      <div class="book-card">
+        <div class="book-top"></div>
+        <div class="book-face">
+          <h1 class="book-title">책플리</h1>
+          <p class="book-sub">
+            어떤 공간으로 떠나 볼까요?<br>
+            <span>&gt; 책을 클릭해 독서를 시작해 보세요</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 책 아래 버튼 영역 -->
+  <div class="btn btn-outline-success">책 읽을 준비</button>
+    <a class="btn tip-btn w-100 mb-3" href="tips.html#choose-book">
+      책 고르러 가기
+    </a>
+    <a class="btn tip-btn w-100" href="tips.html#hobby-tip">
+      독서 취미를 즐기는<br>팁 알아보기
+    </a>
+  </div>
+
+</div>
+
+  <!-- ===== 사이트 소개 (메인 아래 섹션) ===== -->
+   <section class="container py-5" id="about">
+        <div class="text-center py-5">
+            <h2 class="fw-bold">북플리는?</h2>
+        <p>공간 컨셉에 맞춘 몰입용 플레이리스트를 고르는 곳</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="glass-card p-4 h-100">
+            <h5 style="color:var(--gold); font-weight:800;">1) 공간부터 선택</h5>
+            <p style="color:var(--muted); line-height:1.7;" class="mb-0">
+              숲·바다·도시·판타지. 분위기 선택이 곧 독서 시작.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="glass-card p-4 h-100">
+            <h5 style="color:var(--gold); font-weight:800;">2) 몰입용 무드</h5>
+            <p style="color:var(--muted); line-height:1.7;" class="mb-0">
+              조명/공간감/리듬을 떠올리게 하는 테마 플레이리스트.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="glass-card p-4 h-100">
+            <h5 style="color:var(--gold); font-weight:800;">3) 커뮤니티 공유</h5>
+            <p style="color:var(--muted); line-height:1.7;" class="mb-0">
+              나만의 책플리와 독서 아이템을 가볍게 남기기.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container d-flex justify-content-between flex-wrap gap-2">
+      <small>© 2025 BookPlaylist</small>
+      <small>메인 페이지</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

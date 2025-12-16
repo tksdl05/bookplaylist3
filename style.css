@@ -1,0 +1,94 @@
+/* 색상*/
+:root{
+  --bg:#4b4339;           /* 전체 배경 브라운 */
+  --deep:#244b3a;         /* 딥그린(포인트) */
+  --gold:#c6a15a;         /* 골드(텍스트/장식) */
+  --ivory:#f3efe6;        /* 밝은 글자 */
+  --muted:rgba(243,239,230,.75);
+  --accent:#f08c6e;       /* hover 포인트 */
+}
+
+/*폰트 */
+@font-face{
+  font-family: "HamchoromBatang";
+  src: url("fonts/HCRBatang.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 바디 스타일 */
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ivory);
+  font-family: "HamchoromBatang", serif;
+  padding-top: 86px;
+}
+
+/*상단 메뉴바*/
+.topbar{
+  background: rgba(30, 25, 20, 0.6); /* 투명도 60%로 설정해 뒀음 */
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(198,161,90,.25);
+}
+
+.brandbox{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:120px;
+  height:52px;
+  background: rgba(36,75,58,.9);
+  border: 1px solid rgba(198,161,90,.25);
+  color: var(--gold) !important;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.navbar .nav-link{
+  color: rgba(198,161,90,.9);
+  font-weight: 800;
+  transition: .15s;
+}
+.navbar .nav-link:hover{ color: var(--accent); }
+
+/* 마우스 올리면(hover) 세부 메뉴 보이게(dropdown) */
+.hover-dd:hover > .dropdown-menu{
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-menu{
+  background: rgba(30,25,20,.92);
+  border: 1px solid rgba(198,161,90,.25);
+}
+.dropdown-item{ color: rgba(198,161,90,.9); }
+.dropdown-item:hover{
+  background: rgba(240,140,110,.15);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* 버튼, 카드*/
+.btn-login{
+  background: rgba(36,75,58,.9);
+  border: 1px solid rgba(198,161,90,.25);
+  color: var(--gold);
+  font-weight: 800;
+}
+.btn-login:hover{ color: var(--accent); }
+
+.glass-card{
+  background: rgba(0,0,0,.12);
+  border: 1px solid rgba(198,161,90,.22);
+  border-radius: 12px;
+}
+
+/* 푸터 섹션 */
+.footer{
+  margin-top: 48px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(198,161,90,.18);
+  background: rgba(0,0,0,.08);
+  color: var(--muted);
+}

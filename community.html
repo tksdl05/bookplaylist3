@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>책플리 | Community</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark topbar fixed-top">
+  <div class="container-fluid px-4">
+
+    <!-- 책플리 이동 -->
+    <a class="navbar-brand brandbox" href="index.html">책플리</a>
+
+    <!--메뉴 -->
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-lg-4 align-items-lg-start">
+
+        <!-- About -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown">
+            About
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="index.html#about">북플리는?</a></li>
+          </ul>
+        </li>
+
+        <!-- BookPlaylist -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="bookplaylist.html" >
+            BookPlaylist
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="forest.html">숲</a></li>
+            <li><a class="dropdown-item" href="sea.html">바다</a></li>
+            <li><a class="dropdown-item" href="urban.html">도시</a></li>
+            <li><a class="dropdown-item" href="fantasy.html">판타지</a></li>
+          </ul>
+        </li>
+
+        <!-- Reading Tip -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="tips.html">
+            Reading Tip
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="tips.html#choose-book">책 고르기</a></li>
+            <li><a class="dropdown-item" href="tips.html#hobby-tip">취미 독서를 위한 꿀팁</a></li>
+          </ul>
+        </li>
+
+        <!-- Community -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="community.html">
+            Community
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="community.html#my-playlist">나의 책플리</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- 오른쪽 끝: 로그인 -->
+    <a class="btn btn-login ms-3" href="#">로그인</a>
+
+  </div>
+  </nav>
+<header class="page-hero">
+  <div class="container">
+    <h1 class="page-title">Community</h1>
+    <p class="page-desc">나만의 테마/플레이리스트 조합과 독서 아이템을 공유하는 공간(섹션 이동 가능)</p>
+  </div>
+</header>
+
+<main class="py-4">
+  <div class="container">
+
+    <section id="my-playlist" class="mb-5">
+      <h2 class="page-title" style="font-size:1.6rem;">나의 책플리</h2>
+      <p class="page-desc">작성 폼(뼈대)</p>
+
+      <div class="glass-card p-4">
+        <form>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label" style="color:var(--gold); font-weight:700;">테마</label>
+              <select class="form-select" style="background:rgba(0,0,0,.18); border:1px solid rgba(198,161,90,.22); color:var(--ivory);">
+                <option>숲</option>
+                <option>바다</option>
+                <option>도시</option>
+                <option>판타지</option>
+              </select>
+            </div>
+            <div class="col-md-8">
+              <label class="form-label" style="color:var(--gold); font-weight:700;">한 줄 소개</label>
+              <input class="form-control" type="text" placeholder="예: 겨울 바다 + 잔잔한 피아노"
+                style="background:rgba(0,0,0,.18); border:1px solid rgba(198,161,90,.22); color:var(--ivory);">
+            </div>
+            <div class="col-12">
+              <label class="form-label" style="color:var(--gold); font-weight:700;">메모</label>
+              <textarea class="form-control" rows="3" placeholder="조명/간식/공간 팁 등"
+                style="background:rgba(0,0,0,.18); border:1px solid rgba(198,161,90,.22); color:var(--ivory);"></textarea>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <button type="button" class="btn btn-login">등록(임시)</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="items">
+      <h2 class="page-title" style="font-size:1.6rem;">독서 아이템 공유</h2>
+      <p class="page-desc">게시글 리스트(뼈대)</p>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="glass-card p-4 h-100">
+            <h5 style="color:var(--gold); font-weight:800;">아이템 1</h5>
+            <p class="mb-0" style="color:var(--muted); line-height:1.7;">예: 스탠드 조명 / 머그컵</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="glass-card p-4 h-100">
+            <h5 style="color:var(--gold); font-weight:800;">아이템 2</h5>
+            <p class="mb-0" style="color:var(--muted); line-height:1.7;">예: 책갈피 / 노트</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="glass-card p-4 h-100">
+            <h5 style="color:var(--gold); font-weight:800;">아이템 3</h5>
+            <p class="mb-0" style="color:var(--muted); line-height:1.7;">예: 향/디퓨저</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a class="btn btn-login" href="#my-playlist">↑ 나의 책플리로</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container d-flex justify-content-between flex-wrap gap-2">
+    <small>© 2025 BookPlaylist</small>
+    <small>Community 페이지</small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

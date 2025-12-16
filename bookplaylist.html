@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>책플리 | 테마 선택</title>
+  <style>
+/* =========================
+   테마 선택 페이지 전용
+   ========================= */
+
+/* 카드 공통 크기 (이미지 비율 고정) */
+.theme-card{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;       /* 시안과 비슷한 세로 비율 */
+  overflow: hidden;
+  border: 6px solid rgba(0,0,0,.35);
+  background: #000;
+}
+
+/* 이미지: 원본 크기 무관, 박스에 맞춰 잘림 */
+.theme-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* 핵심 */
+  display: block;
+}
+
+/* hover 시 올라오는 반투명 레이어 */
+.theme-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(36,75,58,.55);  /* 딥그린 반투명 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: .2s;
+}
+
+/* hover */
+.theme-card:hover .theme-overlay{
+  opacity: 1;
+}
+
+/* 가운데 테마 텍스트 */
+.theme-title{
+  color: var(--gold);
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 10px 18px;
+  border: 2px solid rgba(198,161,90,.5);
+  background: rgba(0,0,0,.25);
+}
+</style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark topbar fixed-top">
+  <div class="container-fluid px-4">
+
+    <!-- 책플리 이동 -->
+    <a class="navbar-brand brandbox" href="index.html">책플리</a>
+
+    <!--메뉴 -->
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-lg-4 align-items-lg-start">
+
+        <!-- About -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown">
+            About
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="index.html#about">북플리는?</a></li>
+          </ul>
+        </li>
+
+        <!-- BookPlaylist -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="bookplaylist.html" >
+            BookPlaylist
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="forest.html">숲</a></li>
+            <li><a class="dropdown-item" href="sea.html">바다</a></li>
+            <li><a class="dropdown-item" href="urban.html">도시</a></li>
+            <li><a class="dropdown-item" href="fantasy.html">판타지</a></li>
+          </ul>
+        </li>
+
+        <!-- Reading Tip -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="tips.html">
+            Reading Tip
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="tips.html#choose-book">책 고르기</a></li>
+            <li><a class="dropdown-item" href="tips.html#hobby-tip">취미 독서를 위한 꿀팁</a></li>
+          </ul>
+        </li>
+
+        <!-- Community -->
+        <li class="nav-item dropdown hover-dd">
+          <a class="nav-link dropdown-toggle" href="community.html">
+            Community
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="community.html#my-playlist">나의 책플리</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- 오른쪽 끝: 로그인 -->
+    <a class="btn btn-login ms-3" href="#">로그인</a>
+
+  </div>
+  </nav>
+
+<div class="container py-5">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 숲 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <a href="forest.html" class="text-decoration-none">
+        <div class="theme-card">
+          <img src="images/foresthut.jpg" alt="숲 테마">
+          <div class="theme-overlay">
+            <div class="theme-title">숲</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- 바다 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <a href="sea.html" class="text-decoration-none">
+        <div class="theme-card">
+          <img src="images/sea.jpg" alt="바다 테마">
+          <div class="theme-overlay">
+            <div class="theme-title">바다</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- 도시 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <a href="urban.html" class="text-decoration-none">
+        <div class="theme-card">
+          <img src="images/urban.jpg" alt="도시 테마">
+          <div class="theme-overlay">
+            <div class="theme-title">도시</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- 판타지 -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <a href="fantasy.html" class="text-decoration-none">
+        <div class="theme-card">
+            <img src="images/sf.jpg" alt="판타지 테마">
+          <div class="theme-overlay">
+            <div class="theme-title">판타지</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="footer">
+    <div class="container d-flex justify-content-between flex-wrap gap-2">
+      <small>© 2025 BookPlaylist</small>
+      <small>테마 선택 화면</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
