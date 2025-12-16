@@ -4,33 +4,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>책플리 | 테마 선택</title>
   <style>
-/* =========================
-   테마 선택 페이지 전용
-   ========================= */
 
-/* 카드 공통 크기 (이미지 비율 고정) */
+/* 테마 카드 */
 .theme-card{
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;       /* 시안과 비슷한 세로 비율 */
+  aspect-ratio: 3 / 4;      
   overflow: hidden;
   border: 6px solid rgba(0,0,0,.35);
   background: #000;
 }
 
-/* 이미지: 원본 크기 무관, 박스에 맞춰 잘림 */
 .theme-card img{
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* 핵심 */
+  object-fit: cover;         
   display: block;
 }
 
-/* hover 시 올라오는 반투명 레이어 */
+/* 반투명 */
 .theme-overlay{
   position: absolute;
   inset: 0;
-  background: rgba(36,75,58,.55);  /* 딥그린 반투명 */
+  background: rgba(36,75,58,.55); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +34,6 @@
   transition: .2s;
 }
 
-/* hover */
 .theme-card:hover .theme-overlay{
   opacity: 1;
 }
